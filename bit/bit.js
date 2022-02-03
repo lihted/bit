@@ -16,8 +16,9 @@
         else if (data.select) bit = data.select;
         if (bit === undefined) throw new Error('Bit is broken');
 
-        ///PREPARED ATTRIBUTE
-        for (const key of ['title',
+///PREPARED ATTRIBUTE
+        for (const key of [
+                'title',
                 'class',
                 'id',
                 'style',
@@ -54,21 +55,26 @@
                 'cite',
                 'onkeypress',
                 'srcset',
-                'role']) {
+                'role'
+        ]) {
             const field = data[key];
             if (field === undefined) continue;
             bit.setAttribute(key, field);
         }
-        for (const key of ['height',
+        for (const key of [
+                'height',
                 'width',
-                'color']) {
+                'color'
+            ]) {
             const field = data[key];
             if (field === undefined) continue;
             bit.style.cssText += key + ":" + field
         }
 
+    ///CUSTOM ATTRS
         if (data.attr)
             for (const attr in data.attr) bit.setAttribute(attr, data.attr[attr]);
+
         if (data.append) {
             if (data.append instanceof Array) {
                 for (const content of data.append) {
@@ -79,9 +85,19 @@
             }
         }
 
+        if (data.prepend) {
+            if (data.prepend instanceof Array) {
+                for (const content of data.prepend) {
+                    bit.prepend(content);
+                }
+            } else {
+                bit.prepend(data.prepend);
+            }
+        }
+
         if (data.child) {
             if (data.child instanceof Array) {
-                for (let children of data.child) {
+                for (const children of data.child) {
                     bit.append($bit(children));
                 }
             } else {
@@ -92,7 +108,7 @@
         if (data.wrap) {
             let wpBit;
             if (data.wrap instanceof Array) {
-                for (let wrappers of data.wrap) {
+                for (const wrappers of data.wrap) {
                     wpBit = $bit(wrappers);
                     wpBit.append(bit);
                     bit = wpBit;
@@ -108,7 +124,7 @@
         if (data.text) bit.append(document.createTextNode(data.text));
         if (data.parent) {
             if (data.parent instanceof Array) {
-                for (let parents of data.parent) {
+                for (const parents of data.parent) {
                     parents.append(bit.cloneNode(true));
                 }
             } else {
@@ -117,8 +133,8 @@
         }
         if (data.parentTop) {
             if (data.prepend instanceof Array) {
-                for (let parents of data.parentTop) {
-                    parentTop.prepend(bit.cloneNode(true));
+                for (const parents of data.parentTop) {
+                    parents.prepend(bit.cloneNode(true));
                 }
             } else {
                 data.parentTop.prepend(bit);

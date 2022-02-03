@@ -1,0 +1,43 @@
+*{
+    --color: #2164a3;
+    --bg: #1f1f1f;
+}
+body {
+    font-family: cursive;
+    background-color: var(--bg);
+    color: var(--color);
+}
+
+#main-gif {
+    width: 50%;
+    border-radius: 10px;
+}
+#links-area {
+    margin: 5px;
+}
+#links-area a{
+    text-decoration: none;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 15px;
+    color: var(--color);
+    border: 2px solid var(--color);
+    background: transparent;
+    transition: .2s linear;
+    font-size: 18px;
+}
+body a:hover{
+    border: 2px solid transparent;
+    color: var(--bg);
+    background: var(--color);
+}
+.wrapper {
+    margin: auto;
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+}
+ #description{
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
