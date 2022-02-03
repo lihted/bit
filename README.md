@@ -11,7 +11,7 @@
  ```
  ```html 
 <body>
-  <div id="Welcome">Hello World!</div>
+   <div id="Welcome">Hello World!</div>
 </body>
 ```
  #### Architecture
@@ -31,10 +31,10 @@
  ```
  ```html
 <body>
-  <div id="Names">
+   <div id="Names">
 	 <div><span>Li Light</span></div>
 	 <div><span>Tengen</span></div>
-  </div>
+   </div>
 </body>
  ```
 
@@ -62,6 +62,6 @@ tag: createElement;
 #### Connect
 ```html
 <head>
-<script src='./bit.js'></script>
+  <script src='./bit.js'></script>
 </head>
 ```
