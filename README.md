@@ -10,7 +10,9 @@
  });
  ```
  ```html 
-<div id="Welcome">Hello World!</div>
+<body>
+  <div id="Welcome">Hello World!</div>
+</body>
 ```
  #### Architecture
  ```js
@@ -28,10 +30,12 @@
  });
  ```
  ```html
-<div id="Names">
+<body>
+  <div id="Names">
 	 <div><span>Li Light</span></div>
 	 <div><span>Tengen</span></div>
-</div>
+  </div>
+</body>
  ```
 
 <details><summary>Properties</summary>
