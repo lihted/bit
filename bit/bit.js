@@ -7,11 +7,8 @@
         let bit;
         if (data.tag){
             if(['svg',
-                'path'].includes(data.tag)) {
-                bit = document.createElementNS("http://www.w3.org/2000/svg", data.tag);
-            } else {
-                bit = document.createElement(data.tag);
-            }
+                'path'].includes(data.tag)) bit = document.createElementNS("http://www.w3.org/2000/svg", data.tag);
+            else bit = document.createElement(data.tag);
         }
         else if (data.select) bit = data.select;
         if (bit === undefined) throw new Error('Bit is broken');
