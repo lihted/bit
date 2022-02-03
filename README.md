@@ -1,5 +1,6 @@
-# $bit
+# $bit 
 #### JavaScript lib for easy creation DOM elements<br>
+#### Simple
 ```js
  $bit({
   tag: 'div',
@@ -36,10 +37,27 @@
 <details><summary>Properties</summary>
 <p>
 
-> Most of the named properties are comparable to HTML, but new ones have also been added. <br>
- 
+ #### Most of the named properties are comparable to HTML <br>
+> [class, id, title, value...]<br>
+#### But new ones have also been added<br>
+> [parent]: parent.append($bit); <br>
+[parentTop]: parent.prepend($bit); <br>
+[child]: $bit.append(child); <br>
+[wrap]: $bit = wrap.append($bit); <br>
+[append]: $bit.append(); <br>
+[prepend]: $bit.prepend(); <br>
+attr: setAttribute; <br>
+html: innerHtml; <br>
+text: createTextNode; <br>
+tag: createElement;
 </p>
 </details>
- 
- 
-	
+
+<hr>
+
+#### Connect
+```html
+<head>
+<script src='./bit.js'></script>
+</head>
+```
