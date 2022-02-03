@@ -44,16 +44,16 @@
  #### Most of the named properties are comparable to HTML <br>
 > [class, id, title, value...]<br>
 #### But new ones have also been added<br>
-> [parent]: parent.append($bit); <br>
-[parentTop]: parent.prepend($bit); <br>
-[child]: $bit.append(child); <br>
-[wrap]: $bit = wrap.append($bit); <br>
-[append]: $bit.append(); <br>
-[prepend]: $bit.prepend(); <br>
-attr: setAttribute; <br>
-html: innerHtml; <br>
-text: createTextNode; <br>
-tag: createElement;
+> ***[parent]:*** parent.append($bit); <br>
+***[parentTop]:*** parent.prepend($bit); <br>
+***[child]:*** $bit.append(child); <br>
+***[wrap]:*** $bit = wrap.append($bit); <br>
+***[append]:*** $bit.append(); <br>
+***[prepend]:*** $bit.prepend(); <br>
+***attr:*** setAttribute; <br>
+***html:*** innerHtml; <br>
+***text:*** createTextNode; <br>
+***tag:*** createElement;
 </p>
 </details>
 
