@@ -17,27 +17,37 @@
 ```
 This was the simplest example of using a static Bit <br>
 But with that you can later build an architecture with your kernel. <br>
-
+***
  ### So, what is a Bit? <br>
  ```
  In simple terms: this is HTML with additional JS features.
  Bit allows you not to separate JS and HTML, you can create your HTML in JS.
  ``` 
- 
+
  ### What can Bit? <br>
  ```
  It is fully capable of creating websites (e.g. SPA)
  ``` 
-
 ### Bit Features <br>
  ```
- It is fully capable of creating websites (e.g. SPA)
- ``` 
+ By far the biggest feature of the Bit is its simplicity. 
+ In fact, it is just an object with which various manipulations take place
+ And thanks to this you can create efficient code.
 
- Attributes play a key role in Bit. They are responsible for its essence and work. <br> You can both create these attributes and supplement them
+It also plays a significant role that the Bit does not need to be fully integrated. 
+You can use it as a module required for minimal use in the project, or develop the project completely on your Bit core.
+ ``` 
+***
+# Attributes
+ Attributes play a major role in Bit. They are responsible for its essence and work. <br> 
+ <sub>You can both create these attributes and supplement them</sub>
+ 
+ 
+ # Type Bit
+ There are 3 main types of Bits
  
  ```js
- $bit({
+new Bit({
   tag: 'div',
   id: 'Names',
   child: [{
@@ -48,7 +58,7 @@ But with that you can later build an architecture with your kernel. <br>
     child: { tag: 'span', text: 'Tengen' }
   }],
   parent: document.body
- });
+});
  ```
  ```html
 <body>
