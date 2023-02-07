@@ -18,7 +18,10 @@
 This was the simplest example of using a static Bit <br>
 But with that you can later build an architecture with your kernel.
 
- #### Architecture
+# Bit?
+ So, what is a Bit? <br>
+ In simple terms: this is HTML with additional JS features.
+ 
  ```js
  $bit({
   tag: 'div',
