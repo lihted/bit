@@ -41,8 +41,16 @@ You can use it as a module required for minimal use in the project, or develop t
 # Attributes
  Attributes play a major role in Bit. They are responsible for its essence and work. <br> 
  <sub>You can both create these attributes and supplement them</sub>
+ #### Most of the named attributes are comparable to HTML <br>
+> [class, id, title, value...]<br>
+ #### class
+> class: "String" ?? [...]
+#### children
+> child: {Object} ?? Function(b) ?? in [...] ?? [[{Object},Function(b)]]
+#### parent
+> parent: Element ?? [...]
  
- 
+ ***
  # Type Bit
  There are 3 main types of Bits <br>
  **Static:** *Object*
@@ -53,18 +61,20 @@ new Bit({
 	text: "Hello World!"
   }
   parent: document.body
-});
+}); 
  ```
  **Advanced:** *Function*
  ```js
 new Bit((b) => {
+      // b = {...}
       b.param = {
+        // b.param = Set Attrs
         class: "static-bit",
         child: {
           text: "Hello World!",
         },
+        parent: document.body,
       };
-      b.parent = document.body;
     });
  ```
  **Mixed:** *Object => Function*
@@ -102,12 +112,16 @@ Mixed Bit is the middle ground between Object and Function. It is a possible add
  ### Building your own kernel based on Bit <br>
  ```js
  class MyBit extends Bit // Recommended at the beginning of using Bit
- new MyBit().genmod((attribtute, bit)=> { // Modified bit
- // attribtute = Object data;
-	// bit = Element;
- 	if(attribtute.myAttr)
-		bit.myAttr = attribtute.myAttr;
+ new MyBit().genmod((attribute, element)=> { // Modified bit
+     // attribute = Object Data;
+     // element = Node;
+ 	if(attribute.myAttr)
+		element.classList.add("Modified");
  });
+ 
+ new MyBit({
+      myAttr: "Value",
+    }); // <bit class="Modified">
  ``` 
 
 <details><summary>Properties</summary>
@@ -128,12 +142,3 @@ Mixed Bit is the middle ground between Object and Function. It is a possible add
 ***tag:*** createElement;
 </p>
 </details>
-
-<hr>
-
-#### Connect
-```html
-<head>
-  <script src='./bit.js'></script>
-</head>
-```
