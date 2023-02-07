@@ -1,19 +1,21 @@
-# $bit 
-#### JavaScript lib for easy creation DOM elements<br>
-#### Simple
+# Bit CCE 
+#### Bit Core Creation Elements <br>
+##### This is JavaScript Library for create Node Elements
+##### For example:
 ```js
- $bit({
-  tag: 'div',
+ new Bit({
   text: 'Hello World!',
   id: 'Welcome',
   parent: document.body
  });
  ```
+##### Result:
  ```html 
 <body>
-   <div id="Welcome">Hello World!</div>
+   <bit id="Welcome">Hello World!</bit>
 </body>
 ```
+##### This was the simplest example of using a bit
  #### Architecture
  ```js
  $bit({
