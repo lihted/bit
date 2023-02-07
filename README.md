@@ -15,7 +15,9 @@
    <bit id="Welcome">Hello World!</bit>
 </body>
 ```
-##### This was the simplest example of using a bit
+This was the simplest example of using a static Bit <br>
+But with that you can later build an architecture with your kernel.
+
  #### Architecture
  ```js
  $bit({
