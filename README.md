@@ -44,30 +44,71 @@ You can use it as a module required for minimal use in the project, or develop t
  
  
  # Type Bit
- There are 3 main types of Bits
- 
+ There are 3 main types of Bits <br>
+ **Static:** *Object*
  ```js
 new Bit({
-  tag: 'div',
-  id: 'Names',
-  child: [{
-    tag: 'div',
-    child: { tag: 'span', text: 'Li Light' }
-  },{
-    tag: 'div',
-    child: { tag: 'span', text: 'Tengen' }
-  }],
+  class: "static-bit",
+  child: {
+	text: "Hello World!"
+  }
   parent: document.body
 });
  ```
+ **Advanced:** *Function*
+ ```js
+new Bit((b) => {
+      b.param = {
+        class: "static-bit",
+        child: {
+          text: "Hello World!",
+        },
+      };
+      b.parent = document.body;
+    });
+ ```
+ **Mixed:** *Object => Function*
+ ```js
+new Bit(
+      {
+        class: "static-bit",
+        parent: document.body,
+      },
+      (b) => {
+        b.child = {
+            text: "Hello World!",
+        };
+      }
+    );
+ ```
+ **Results:**
  ```html
 <body>
-   <div id="Names">
-	 <div><span>Li Light</span></div>
-	 <div><span>Tengen</span></div>
-   </div>
+   <bit class="static-bit">
+	 <bit>Hello World!</bit>
+   </bit>
 </body>
  ```
+Each type exists for the tasks at hand.
+For example, static is better to use when you want to create a simple Bit with no perspective in the future.
+
+The Function Bit is designed to create more complex and flexible structures. 
+This is a Bit for the perspective of change in the future.
+
+Mixed Bit is the middle ground between Object and Function. It is a possible addition to the other 2.
+ 
+***
+
+ ### Building your own kernel based on Bit <br>
+ ```js
+ class MyBit extends Bit // Recommended at the beginning of using Bit
+ new MyBit().genmod((attribtute, bit)=> { // Modified bit
+ // attribtute = Object data;
+	// bit = Element;
+ 	if(attribtute.myAttr)
+		bit.myAttr = attribtute.myAttr;
+ });
+ ``` 
 
 <details><summary>Properties</summary>
 <p>
