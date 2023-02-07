@@ -16,11 +16,25 @@
 </body>
 ```
 This was the simplest example of using a static Bit <br>
-But with that you can later build an architecture with your kernel.
+But with that you can later build an architecture with your kernel. <br>
 
-# Bit?
- So, what is a Bit? <br>
+ ### So, what is a Bit? <br>
+ ```
  In simple terms: this is HTML with additional JS features.
+ Bit allows you not to separate JS and HTML, you can create your HTML in JS.
+ ``` 
+ 
+ ### What can Bit? <br>
+ ```
+ It is fully capable of creating websites (e.g. SPA)
+ ``` 
+
+### Bit Features <br>
+ ```
+ It is fully capable of creating websites (e.g. SPA)
+ ``` 
+
+ Attributes play a key role in Bit. They are responsible for its essence and work. <br> You can both create these attributes and supplement them
  
  ```js
  $bit({
