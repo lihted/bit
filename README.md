@@ -217,3 +217,29 @@ new Bit().createBlock(); // Create all Bits in turn
 	<bit class="sector-class item-3"></bit>
 </body>
  ```
+
+# Naming
+Naming is an important part of the bit that allows you to conveniently interact with elements <br>
+**For example:**
+```js    
+const myBit = new Bit({
+      child: {
+        class: "item-1",
+        name: "child1",
+        child: {
+          class: "item-2",
+          name: "child2",
+        },
+      },
+    });
+    // Result:
+    // <bit>
+    //  <bit class="item-1">
+    //    <bit class="item-2"></bit>
+    //  </bit>
+    /// </bit>
+    
+myBit.child1 // <bit class="item-1">
+myBit.child2 // <bit class="item-2">
+
+``` 
