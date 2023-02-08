@@ -94,6 +94,13 @@ Attributes play a major role in Bit. They are responsible for its essence and wo
 > cond: Boolean ?? (...Boolean) <br> 
 > dif: Object <br>
 > delse: Object 
+#### legacy(succession)
+> <sub>legacy attributes for first childs</sub><br>
+> legacy: { <br>
+> ...attr<br>
+> ?succession: Boolean // legacy for all childs<br>
+> }
+ 
  
  ***
  # Type Bit
