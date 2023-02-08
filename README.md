@@ -98,7 +98,7 @@ Attributes play a major role in Bit. They are responsible for its essence and wo
 > dif: Object <br>
 > delse: Object 
 #### legacy(succession)
-> <sub>legacy attributes for first childs</sub><br>
+> <sub>legacy attributes for first child row</sub><br>
 > legacy: { <br>
 > ...attr<br>
 > ?succession: Boolean // legacy for all childs<br>
@@ -223,6 +223,7 @@ Naming is an important part of the bit that allows you to conveniently interact 
 **For example:**
 ```js    
 const myBit = new Bit({
+      class: "root-bit",
       child: {
         class: "item-1",
         name: "child1",
@@ -233,13 +234,14 @@ const myBit = new Bit({
       },
     });
     // Result:
-    // <bit>
-    //  <bit class="item-1">
-    //    <bit class="item-2"></bit>
-    //  </bit>
-    /// </bit>
+    // <bit class="root-bit">
+    //   <bit class="item-1">
+    //     <bit class="item-2"></bit>
+    //   </bit>
+    // </bit>
     
 myBit.child1 // <bit class="item-1">
 myBit.child2 // <bit class="item-2">
 
 ``` 
+The names of all child are assigned to the Root Bit
