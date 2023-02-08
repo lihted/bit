@@ -225,18 +225,19 @@ Naming is an important part of the bit that allows you to conveniently interact 
 const myBit = new Bit({
       class: "root-bit",
       child: {
-        class: "item-1",
         name: "child1",
+        class: "item-1",
         child: {
+	  name: "child2",
           class: "item-2",
-          name: "child2",
+	  text: "Hello World!"
         },
       },
     });
-    // Result:
+
     // <bit class="root-bit">
     //   <bit class="item-1">
-    //     <bit class="item-2"></bit>
+    //     <bit class="item-2">Hello World!</bit>
     //   </bit>
     // </bit>
     
