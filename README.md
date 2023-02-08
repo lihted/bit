@@ -53,6 +53,9 @@ Attributes play a major role in Bit. They are responsible for its essence and wo
 #### name
 > <sub>Give name of Bit</sub><br>
 > name: String
+#### tag
+> <sub>Give tag name of Bit</sub><br>
+> tag: String
 #### children
 > <sub>Create child nodes</sub><br>
 > child: {Object} ?? Function(b) ?? in [...] ?? [[{Object},Function(b)]]
@@ -158,10 +161,8 @@ The Function Bit is designed to create more complex and flexible structures.
 This is a Bit for the perspective of change in the future.
 
 Mixed Bit is the middle ground between Object and Function. It is a possible addition to the other 2.
- 
-***
 
- ### Building your own kernel based on Bit <br>
+ # Building your own kernel based on Bit <br>
  ```js
  class MyBit extends Bit // Recommended at the beginning of using Bit
  new MyBit().genmod((attribute, element)=> { // Modified bit
@@ -175,22 +176,44 @@ Mixed Bit is the middle ground between Object and Function. It is a possible add
       myAttr: "Value",
     }); // <bit class="Modified">
  ``` 
+	
+# Blocks
+You can create a block structure<br>
+**For example:**
+```js
+new Bit().startBlock({
+      legacy: { // legacy for next Bits
+        class: "sector-class",
+        parent: document.body,
+      }
+    }); 
+  
+new Bit({
+      class: "item-1",
+    });
 
-<details><summary>Properties</summary>
-<p>
+new Bit({
+      class: "item-2",
+    });
+    
+new Bit({
+      class: "item-3",
+    });
+    
+const Bits = new Bit().rangeBlock(); // Get array current bits turn
+//[
+//  <bit class="sector-class item-1">, 
+//  <bit class="sector-class item-2">, 
+//  <bit class="sector-class item-3">
+//]
 
- #### Most of the named properties are comparable to HTML <br>
-> [class, id, title, value...]<br>
-#### But new ones have also been added<br>
-> ***[parent]:*** parent.append($bit); <br>
-***[parentTop]:*** parent.prepend($bit); <br>
-***[child]:*** $bit.append(child); <br>
-***[wrap]:*** $bit = wrap.append($bit); <br>
-***[append]:*** $bit.append(); <br>
-***[prepend]:*** $bit.prepend(); <br>
-***attr:*** setAttribute; <br>
-***html:*** innerHtml; <br>
-***text:*** createTextNode; <br>
-***tag:*** createElement;
-</p>
-</details>
+new Bit().createBlock(); // Create all Bits in turn
+``` 
+**Result:**
+ ```html
+<body>
+	<bit class="sector-class item-1"></bit>
+	<bit class="sector-class item-2"></bit>
+	<bit class="sector-class item-3"></bit>
+</body>
+ ```
